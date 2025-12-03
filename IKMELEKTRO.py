@@ -4,7 +4,7 @@ import pandas as pd
 # Function to load and clean data
 def load_data():
     DATABASE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAP5ouMY548DIRJSJZ2H0Kp7iDjEYkYXNj7vSbbdlAlpnHk5BsZAhcqFLn-6rGiqzZAYd7sPBwp57E/pub?gid=0&single=true&output=csv"
-    RESPONSE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQvNjxz-2CCd8rO2BuZ2382E203ttXx9kGlpB2BhjS4A4TphuTnljZwzEc_QkvAKEVPjdtglSqfkcrX/pub?gid=0&single=true&output=csv"
+    RESPONSE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAxA9VZ8KpyHJndvE7e3qA3U2emxqKEtCIMEHYY0dYeUZL4ky3QJEayCbF7E9l22t7tV82bSBdbjHp/pub?gid=725032840&single=true&output=csv"
 
     # Load both course database and response data
     course_database = pd.read_csv(DATABASE_SHEET_URL)
@@ -12,7 +12,7 @@ def load_data():
 
     # Clean up data (strip and lowercase for consistency)
     course_database['Mata Kuliah'] = course_database['Mata Kuliah'].str.strip().str.upper()
-    response_data['Nama mata kuliah yang diampu sesuai nama dosen yang dipilih sebelumnya'] = response_data['Nama mata kuliah yang diampu sesuai nama dosen yang dipilih sebelumnya'].str.strip().str.upper()
+    response_data['Mata Kuliah'] = response_data['Mata Kuliah'].str.strip().str.upper()
 
     # Ensure NIM columns are of the same type for comparison
     course_database['NIM'] = course_database['NIM'].astype(str)
