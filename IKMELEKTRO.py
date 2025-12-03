@@ -11,8 +11,8 @@ def load_data():
     response_data = pd.read_csv(RESPONSE_SHEET_URL)
 
     # Clean up data (strip and lowercase for consistency)
-    course_database['Mata Kuliah'] = course_database['Mata Kuliah'].str.strip().str.upper()
-    response_data['Mata Kuliah'] = response_data['Mata Kuliah'].str.strip().str.upper()
+    course_database['Matakuliah'] = course_database['Matakuliah'].str.strip().str.upper()
+    response_data['Matakuliah'] = response_data['Matakuliah'].str.strip().str.upper()
 
     # Ensure NIM columns are of the same type for comparison
     course_database['NIM'] = course_database['NIM'].astype(str)
